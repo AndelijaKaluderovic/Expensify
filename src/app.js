@@ -1,38 +1,58 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Switch, Link, NavLink } from 'react-router-dom'
 import 'normalize.css/normalize.css'
 import './styles/styles.scss'
 
 const ExpenseDashboardPage = () => (
-        <div>
+    <div>
         <p>This is from dishboard component</p>
-        </div>
-    )
+    </div>
+)
 const AddExpensePage = () => (
-        <div>
+    <div>
         <p>This is from add expense component</p>
-        </div>
-    )
+    </div>
+)
 const EditExpensePage = () => (
-        <div>
+    <div>
         <p>This is from add edit component</p>
-        </div>
-    )
+    </div>
+)
 const HelpPage = () => (
-        <div>
+    <div>
         <p>This is from add help component</p>
-        </div>
-    )
+    </div>
+)
+const NotFoundPage = () => (
+    <div>
+        <p>404! - <Link to="/">Go Home</Link></p>
+    </div>
+)
+const Header = () => (
+    <div>
+        <h2>Expensify</h2>
+        <nav>
+            <NavLink to="/" activeClassName="is-active" exact={true}>  Dashboard</NavLink>
+            <NavLink to="/create" activeClassName="is-active">Create</NavLink>
+            <NavLink to="/edit" activeClassName="is-active">Edit</NavLink>
+            <NavLink to="/help" activeClassName="is-active">Help</NavLink>
+        </nav>
+    </div>
+)
 
 const routes = (
     <Router>
-        <Routes>
-        <Route path="/" element={<ExpenseDashboardPage />} exact />
-        <Route path="/create" element={<AddExpensePage />} />
-        <Route path="/edit" element={<EditExpensePage />} />
-        <Route path="/help" element={<HelpPage />} />
-        </Routes>
+        <div>
+            <Header />
+            <Switch>
+                <Route path="/" component={ExpenseDashboardPage} exact={true} />
+                <Route path="/create" component={AddExpensePage} />
+                <Route path="/edit" component={EditExpensePage} />
+                <Route path="/help" component={HelpPage} />
+                <Route component={NotFoundPage} />
+            </Switch>
+        </div>
     </Router>
 )
 
