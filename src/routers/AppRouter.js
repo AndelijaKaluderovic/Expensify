@@ -7,6 +7,7 @@ import Edit from '../components/Edit'
 import Help from '../components/Help'
 import NotFound from '../components/NotFound'
 
+
 const AppRouter = () => (
     <Router>
         <div>
@@ -14,7 +15,7 @@ const AppRouter = () => (
             <Switch>
                 <Route path="/" component={Dashboard} exact={true} />
                 <Route path="/create" component={Create} />
-                <Route path="/edit" component={Edit} />
+                <Route path="/edit/:id" component={Edit} />
                 <Route path="/help" component={Help} />
                 <Route component={NotFound} />
             </Switch>
