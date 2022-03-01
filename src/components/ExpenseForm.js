@@ -2,15 +2,19 @@ import React from 'react';
 import moment from 'moment';
 import { SingleDatePicker } from 'react-dates';
 import 'react-dates/lib/css/_datepicker.css'
-import 'react-dates/initialize'
 
 export default class ExpenseForm extends React.Component {
-    state = {
-        description: '',
-        note: '',
-        amount: '',
-        createdAt: moment(),
-        calendarFocused: false
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            description: props.expense ? props.expense.description : '',
+            note: props.expense ? props.expense.note : '',
+            amount: props.expense ? (props.expense.amount / 100).toString() : '',
+            createdAt: props.expense ? moment(props.expense.createdAt) : moment(),
+            calendarFocused: false,
+            error: ''
+        };
     }
     onDescriptionChange = (e) => {
         const description = e.target.value;
@@ -28,8 +32,8 @@ export default class ExpenseForm extends React.Component {
         }
     }
     onDateChange = (createdAt) => {
-        if(createdAt) {
-        this.setState(() => ({ createdAt }))
+        if (createdAt) {
+            this.setState(() => ({ createdAt }))
         }
     }
     onFocusChange = ({ focused }) => {
@@ -37,10 +41,10 @@ export default class ExpenseForm extends React.Component {
     }
     onSubmit = (e) => {
         e.preventDefault();
-        if (!this.state.description || !this.state.amount){
-        this.setState(() => ({ error: 'Please provide description and amount'}))
+        if (!this.state.description || !this.state.amount) {
+            this.setState(() => ({ error: 'Please provide description and amount' }))
         } else {
-            this.setState(() => ({ error: ''}))
+            this.setState(() => ({ error: '' }))
             this.props.onSubmit({
                 description: this.state.description,
                 amount: parseFloat(this.state.amount, 10) * 100,
@@ -52,7 +56,7 @@ export default class ExpenseForm extends React.Component {
     render() {
         return (
             <div>
-            {this.state.error && <p>{this.state.error}</p>}
+                {this.state.error && <p>{this.state.error}</p>}
                 <form onSubmit={this.onSubmit}>
                     <input
                         type='text'
@@ -81,9 +85,7 @@ export default class ExpenseForm extends React.Component {
                         onChange={this.onNoteChange}
                     >
                     </textarea>
-                    <button
-
-                    >Add Expanse</button>
+                    <button>{this.state.description ? 'Edit' : 'Add Expanse'}</button>
                 </form>
             </div>
         )
