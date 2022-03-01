@@ -1,8 +1,9 @@
 import React from 'react'
+import ExpenseList from './ExpenseList';
 
 const Dashboard = () => (
     <div>
-        <p>This is from dishboard component</p>
+        <ExpenseList />
     </div>
 )
 export default Dashboard
