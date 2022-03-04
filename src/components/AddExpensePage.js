@@ -16,12 +16,12 @@ export class AddExpensePage extends React.Component {
             </div>
 
         )
-    }
-}
+    };
+};
 
 // It is easier to test with mapDispatchToProps
 const mapDispatchToProps = (dispatch) => ({
     startAddExpense: (expense) => dispatch(startAddExpense(expense))
 });
 
-export default connect(undefined, mapDispatchToProps)(AddExpensePage)
+export default connect(undefined, mapDispatchToProps)(AddExpensePage);
