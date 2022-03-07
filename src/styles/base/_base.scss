@@ -1,10 +1,14 @@
- html {
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@100;300;600&display=swap');
+
+html {
     font-size: 62.5%;
 } 
 
 body {
-    font-family: Helvetica, Arial, sans-serif;
+    font-family: 'IBM Plex Mono', monospace;
     font-size: $m-size;
+    margin: 0;
+    padding: 0;
 }
 
 button {

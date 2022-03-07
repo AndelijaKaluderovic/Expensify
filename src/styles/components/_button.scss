@@ -1,0 +1,15 @@
+.button{
+    background: $light-green;
+    border: none;
+    border-radius: 15px;
+    color: $dark-grey;
+    font-family: 'IBM Plex Mono', monospace;
+    font-weight: bold;
+    padding: $m-size;
+    margin-top: 2.5rem;
+    &:hover{
+        background: white;
+        color: $light-green;
+    }
+}
+
