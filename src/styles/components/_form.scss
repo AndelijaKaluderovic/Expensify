@@ -1,0 +1,39 @@
+.form{
+    display: flex;
+    flex-direction: column;
+    margin: $m-size;
+    >*{
+        margin-bottom: $m-size;
+        border-radius: 5px;
+    }
+}
+.form__add-button,
+.form__remove-button{
+    color: #3c8c30;
+    background: none;
+    border: 1px solid #3c8c30;
+    border-radius: 5px;
+    padding: 1.2rem;
+    text-align: center;
+    width: 150px;
+    display: block;
+    margin: auto;
+    &:hover{
+        color: white;
+        background: #3c8c30;
+    }
+}
+.form__remove-button{
+    color: $orange;
+    background: none;
+    border: 1px solid $orange;
+    &:hover{
+        color: white;
+        background: $orange;
+    }
+}
+.form__error{
+    margin: $l-size 0;
+    color: $orange;
+    font-style: italic;
+}

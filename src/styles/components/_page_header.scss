@@ -2,6 +2,9 @@
     padding: $l-size $m-size;
     font-size: 1.5rem;
     background: $light-grey;
+    h1{
+        font-weight: 100;
+    }
     @media (min-width: $desktop-breakpoint) {
         padding: $l-size; 
     }

@@ -2,6 +2,13 @@
 
 exports[`should render EditExpense 1`] = `
 <div>
+  <div
+    className="page-header"
+  >
+    <h1>
+      Edit
+    </h1>
+  </div>
   <ExpenseForm
     expense={
       Object {
@@ -15,6 +22,7 @@ exports[`should render EditExpense 1`] = `
     onSubmit={[Function]}
   />
   <button
+    className="form__remove-button"
     onClick={[Function]}
   >
     Remove
