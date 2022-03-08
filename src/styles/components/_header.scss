@@ -2,12 +2,17 @@
     background: $light-green;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     padding: 0 $m-size;
+    height: 50px;
     button{
         background: none;
         border: none;
         font-family: 'IBM Plex Mono', monospace;
         color: white;
+    }
+    @media (min-width: $desktop-breakpoint) {
+        padding: 0 $l-size; 
     }
 }
 

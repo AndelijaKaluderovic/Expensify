@@ -1,0 +1,33 @@
+.page-header{
+    padding: $l-size $m-size;
+    font-size: 1.5rem;
+    background: $light-grey;
+    @media (min-width: $desktop-breakpoint) {
+        padding: $l-size; 
+    }
+}
+.page-header__title{
+    h1{
+        font-weight: 100;
+        span{
+            font-weight: bold;
+        }
+    }
+   
+}
+.page-header__button{
+    padding: $m-size 0;
+}
+.link{
+    text-decoration: none;
+    color: $light-green;
+    border: 1px solid $light-green;
+    border-radius: 5px;
+    padding: $s-size;
+    text-align: center;
+    &:hover{
+        color: white;
+        background-color: $light-green;
+
+    }
+}
