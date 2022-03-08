@@ -33,11 +33,17 @@
         align-items: center;
        }
 }
-.list-item__title{
+.list-item__description{
     word-break: break-all;
     color: $dark-grey;
+    font-size: 2rem;
 }
-.list-item__sub-title{
+.list-item__note{
+    color: $dark-grey;
+    margin-top: $s-size;
+}
+
+.list-item__amount{
     color: $dark-grey;
     @media (max-width: $desktop-breakpoint) {
      margin-top: $s-size;
