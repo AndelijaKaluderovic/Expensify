@@ -6,7 +6,7 @@ export const LoginPage = ({ startLogin }) => (
     <div className='box-layout'>
         <div className='box-layout__box'>
             <h1 className='box-layout__h1'>Expensify</h1>
-            <p>Put everything on the table</p>
+            <p>Put everything on the table!</p>
             <button 
             onClick={startLogin}
             className='button'
